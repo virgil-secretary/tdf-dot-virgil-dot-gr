@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <title>Legal Defense Fund</title>
     <link rel="stylesheet" href="./site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
     <style>
+        body,
+        #titletext {
+            font-family: 'Inconsolata', monospace !important;
+        }
+
         .main {
-            margin: 30px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -15,201 +22,68 @@
 
         .main-inner {
             width: 100%;
-            max-width: 800px;
+            max-width: 868px;
             display: inline-block;
         }
 
-        .right {
-            float: right;
+        /* mobile layout */
+        @media (max-width: 1000px) {
+            #titletext {
+                font-size: 7vw;
+            }
+
+            .main-inner {
+                margin: 30px;
+                font-size: 16pt;
+            }
+
+            .right {
+                /* horizontally align*/
+                display: flex;
+                justify-content: center;
+                float: none;
+            }
+
+            .buttonWrapper {
+                display: flex;
+                justify-content: center;
+            }
+
+            .buttonWrapper>* {
+                /* Give 20px of horizontal between children */
+                margin-left: 20px;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .right {
+                float: right;
+                margin-left: 20px;
+            }
         }
     </style>
 </head>
 
 <body>
     <header id="header" class="site-header no-wrap" role="banner">
-        <a class="nav-toggle-label flex-item" id="navToggle" data-controller="NavToggle"
-            data-controllers-bound="NavToggle">
-            <svg class="Icon Icon--hamburger nav-toggle-label-icon" viewBox="0 0 26 18">
-                <use xlink:href="/assets/ui-icons.svg#hamburger-icon--even"></use>
-            </svg>
-        </a>
+        <span class="nav-toggle-label flex-item">
+        </span>
 
         <div class="logo-wrapper flex-item">
-
-
-            <div class="site-title branding" data-content-field="site-title"><a href="/"><span
-                        class="site-title-text">Virgil's Legal
-                        Defense Fund</span></a></div>
-
-
+            <div class="site-title branding"><span class="site-title-text" id="titletext">Virgil's
+                    Legal
+                    Defense Fund</span></div>
         </div>
 
-
-
-        <nav class="header-special-social--shown-on-collapse sqs-template-social-icons sqs-svg-icon--list">
-
-
-
-            <a href="https://www.linkedin.com/in/virgilgr" target="_blank" class="sqs-svg-icon--wrapper linkedin">
-                <div>
-                    <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                        <use class="sqs-use--icon" xlink:href="#linkedin-icon"></use>
-                        <use class="sqs-use--mask" xlink:href="#linkedin-mask"></use>
-                    </svg>
-                </div>
-            </a>
-
-            <a href="https://github.com/virgil" target="_blank" class="sqs-svg-icon--wrapper github">
-                <div>
-                    <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                        <use class="sqs-use--icon" xlink:href="#github-icon"></use>
-                        <use class="sqs-use--mask" xlink:href="#github-mask"></use>
-                    </svg>
-                </div>
-            </a>
-
-            <a href="http://www.facebook.com/10107420255220919" target="_blank" class="sqs-svg-icon--wrapper facebook">
-                <div>
-                    <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                        <use class="sqs-use--icon" xlink:href="#facebook-icon"></use>
-                        <use class="sqs-use--mask" xlink:href="#facebook-mask"></use>
-                    </svg>
-                </div>
-            </a>
-
-            <a href="https://twitter.com/virgilgr" target="_blank" class="sqs-svg-icon--wrapper twitter">
-                <div>
-                    <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                        <use class="sqs-use--icon" xlink:href="#twitter-icon"></use>
-                        <use class="sqs-use--mask" xlink:href="#twitter-mask"></use>
-                    </svg>
-                </div>
-            </a>
-
-            <a href="https://medium.com/@virgilgr/" target="_blank" class="sqs-svg-icon--wrapper medium">
-                <div>
-                    <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                        <use class="sqs-use--icon" xlink:href="#medium-icon"></use>
-                        <use class="sqs-use--mask" xlink:href="#medium-mask"></use>
-                    </svg>
-                </div>
-            </a>
-
-            <a href="mailto:i@virgil.gr" target="_blank" class="sqs-svg-icon--wrapper email">
-                <div>
-                    <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                        <use class="sqs-use--icon" xlink:href="#email-icon"></use>
-                        <use class="sqs-use--mask" xlink:href="#email-mask"></use>
-                    </svg>
-                </div>
-            </a>
-
-
-        </nav>
-
-
-
         <div class="header-special flex-item">
-            <div class="social-search-wrapper">
-                <div class="social-ellipsis" id="socialEllipsis" data-controller="SocialToggle"
-                    data-controllers-bound="SocialToggle">
-                    <svg class="ellipsis-icon" viewBox="0 0 100 24">
-                        <use xlink:href="/assets/ui-icons.svg#ellipsis-icon"></use>
-                    </svg>
-                    <svg class="social-close-icon Icon Icon--close" viewBox="0 0 18 18">
-                        <use xlink:href="/assets/ui-icons.svg#close-icon-line"></use>
-                    </svg>
-                </div>
-                <!--
-         
-         
-          -->
-                <nav class="header-special-social sqs-template-social-icons sqs-svg-icon--list"
-                    data-content-field="connected-accounts">
-
-
-
-                    <a href="https://www.linkedin.com/in/virgilgr" target="_blank"
-                        class="sqs-svg-icon--wrapper linkedin">
-                        <div>
-                            <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                <use class="sqs-use--icon" xlink:href="#linkedin-icon"></use>
-                                <use class="sqs-use--mask" xlink:href="#linkedin-mask"></use>
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="https://github.com/virgil" target="_blank" class="sqs-svg-icon--wrapper github">
-                        <div>
-                            <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                <use class="sqs-use--icon" xlink:href="#github-icon"></use>
-                                <use class="sqs-use--mask" xlink:href="#github-mask"></use>
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="http://www.facebook.com/10107420255220919" target="_blank"
-                        class="sqs-svg-icon--wrapper facebook">
-                        <div>
-                            <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                <use class="sqs-use--icon" xlink:href="#facebook-icon"></use>
-                                <use class="sqs-use--mask" xlink:href="#facebook-mask"></use>
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="https://twitter.com/virgilgr" target="_blank" class="sqs-svg-icon--wrapper twitter">
-                        <div>
-                            <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                <use class="sqs-use--icon" xlink:href="#twitter-icon"></use>
-                                <use class="sqs-use--mask" xlink:href="#twitter-mask"></use>
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="https://medium.com/@virgilgr/" target="_blank" class="sqs-svg-icon--wrapper medium">
-                        <div>
-                            <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                <use class="sqs-use--icon" xlink:href="#medium-icon"></use>
-                                <use class="sqs-use--mask" xlink:href="#medium-mask"></use>
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="mailto:i@virgil.gr" target="_blank" class="sqs-svg-icon--wrapper email">
-                        <div>
-                            <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                <use class="sqs-use--icon" xlink:href="#email-icon"></use>
-                                <use class="sqs-use--mask" xlink:href="#email-mask"></use>
-                            </svg>
-                        </div>
-                    </a>
-
-
-                </nav>
-                <!--
-         
-         
-       --><a href="/search" rel="search" class="header-search" data-controller="SearchToggle"
-                    data-controllers-bound="SearchToggle">
-                    <svg class="Icon Icon--search search-icon" viewBox="0 0 20 20" shape-rendering="geometricPrecision">
-                        <use xlink:href="/assets/ui-icons.svg#search-icon"></use>
-                    </svg>
-                    <svg class="Icon Icon--close search-close-icon" viewBox="0 0 18 18">
-                        <use xlink:href="/assets/ui-icons.svg#close-icon-line"></use>
-                    </svg>
-                </a>
-            </div>
-            <!--
-        -->
-            <!--
-        -->
         </div>
     </header>
 
     <div class="main">
         <div class="main-inner">
-            <img src="./virgil.jpeg" width=360 height=480 class="right">
+            <div class="image-wrapper right">
+                <img src="./virgil.jpeg" width=360 height=480>
+            </div>
 
             <p>
                 Virgil is being held at the Metropolitan Correctional Center in Manhattan and is being charged with
@@ -217,7 +91,7 @@
             <p>
                 You can contribute towards his legal defense by one of the two methods below.
                 Note that verifying your identity will be a requirement for contributing:
-            <div>
+            <div class="buttonWrapper">
                 <a href="https://www.paypal.com/paypalme/VirgilLDF"><button>Contribute via Paypal</button></a>
                 <button disabled>Contribute Cryptocurrency<br>[coming soon]</button>
             </div>
