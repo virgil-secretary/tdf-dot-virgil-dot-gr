@@ -47,12 +47,8 @@
 
             .buttonWrapper {
                 display: flex;
-                justify-content: center;
-            }
-
-            .buttonWrapper>* {
-                /* Give 20px of horizontal between children */
-                margin-left: 20px;
+                justify-content: space-between;
+                align-items: flex-start;
             }
         }
 
@@ -60,6 +56,15 @@
             .right {
                 float: right;
                 margin-left: 20px;
+            }
+
+            .buttonWrapper {
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding-right: 20px;
+                margin-bottom: 200px;
             }
         }
     </style>
